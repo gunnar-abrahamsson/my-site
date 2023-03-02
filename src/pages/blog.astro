@@ -1,7 +1,8 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+
 const title = 'My Astro Learning blog'
 ---
 <html lang="en">
@@ -13,7 +14,7 @@ const title = 'My Astro Learning blog'
       <title>{title}</title>
     </head>
 <body>
-    <Navigation />
+    <Header />
   
     <h1>{title}</h1>
     <p>This is where I will post about my journey learning Astro.</p>
@@ -24,5 +25,8 @@ const title = 'My Astro Learning blog'
     </ul>
 
     <Footer />
+    <script>
+        import '../scripts/menu.js'
+    </script>
 </body>
 </html>
