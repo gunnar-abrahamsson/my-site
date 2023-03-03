@@ -10,8 +10,14 @@ const title = 'My Astro Learning blog'
 <BaseLayout pageTitle={title}>
         <p>This is where I will post about my journey learning Astro.</p>
         <ul>
-            {allPosts.map(post => {
-                return <BlogPost url={post.url} title={post.frontmatter.title} />
+            {allPosts.map((post) => {
+                console.log(post)
+                return (
+                    <li>
+                        <BlogPost url={post.url} title={post.frontmatter.title} />
+                    </li>
+                ) 
+                
             })}
         </ul>
 </BaseLayout>
