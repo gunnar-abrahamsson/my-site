@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await getCollection("posts");
 const title = 'My Astro Learning blog'
 ---
 
@@ -14,7 +14,7 @@ const title = 'My Astro Learning blog'
                 console.log(post)
                 return (
                     <li>
-                        <BlogPost url={post.url} title={post.frontmatter.title} />
+                        <BlogPost url={`/posts/${post.slug}`} title={post.data.title} />
                     </li>
                 ) 
                 
